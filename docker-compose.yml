@@ -12,7 +12,7 @@ services:
       - "questdb"
     volumes:
       - ./data/db:/root/.questdb/db
-  
+
   grafana:
     image: grafana/grafana
     container_name: grafana_alerts
@@ -24,6 +24,7 @@ services:
     volumes:
       - ./data/grafana:/var/lib/grafana/
       - ./grafana/provisioning/:/etc/grafana/provisioning/
+    user: "104"
 
 networks:
   questdb:

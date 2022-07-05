@@ -24,6 +24,15 @@ git remote add origin git@github.com:coding-to-music/questdb-slack-grafana-alert
 git push -u origin main
 ```
 
+# Errors and Messages
+
+```
+Attaching to grafana_alerts, questdb_alerts
+grafana_alerts | mkdir: can't create directory '/var/lib/grafana/plugins': Permission denied
+grafana_alerts | GF_PATHS_DATA='/var/lib/grafana' is not writable.
+grafana_alerts | You may have issues with file permissions, more information here: http://docs.grafana.org/installation/docker/#migrate-to-v51-or-later
+```
+
 # QuestDB, Grafana, Slack alerts tutorial
 
 This repository contains the example code for a tutorial about how to send alerts to Slack based on changes in market data streamed to QuestDB.
