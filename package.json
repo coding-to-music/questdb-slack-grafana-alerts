@@ -1,0 +1,21 @@
+{
+  "name": "questdb-slack-grafana-alerts",
+  "version": "1.0.0",
+  "description": "This repository contains the example code for a tutorial about how to send alerts to Slack based on changes in market data streamed to QuestDB. Stock prices are fetched from the [IexFinance](https://iexcloud.io/docs/api/) API using the [iexfinance](https://pypi.org/project/iexfinance/) Python package, streamed into [QuestDB](https://questdb.io/), a time series database, and alerts are set up in [Grafana](https://grafana.com/) based on the metrics we care about.",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "git add . && git commit -m Build && git push",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/questdb/questdb-slack-grafana-alerts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/questdb/questdb-slack-grafana-alerts/issues"
+  },
+  "homepage": "https://github.com/questdb/questdb-slack-grafana-alerts#readme"
+}

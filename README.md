@@ -1,3 +1,29 @@
+# questdb-slack-grafana-alerts
+
+# 🚀 Javascript full-stack 🚀
+
+https://github.com/coding-to-music/questdb-slack-grafana-alerts
+
+From / By https://github.com/questdb/questdb-slack-grafana-alerts
+
+## Environment variables:
+
+```java
+
+```
+
+## GitHub
+
+```java
+git init
+git add .
+git remote remove origin
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:coding-to-music/questdb-slack-grafana-alerts.git
+git push -u origin main
+```
+
 # QuestDB, Grafana, Slack alerts tutorial
 
 This repository contains the example code for a tutorial about how to send alerts to Slack based on changes in market data streamed to QuestDB.
