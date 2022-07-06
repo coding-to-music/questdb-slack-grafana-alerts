@@ -78,6 +78,7 @@ https://community.grafana.com/t/gf-paths-data-var-lib-grafana-is-not-writable/31
 
 https://github.com/cfbarbero/tick-grafana-docker/issues/1
 
+Any assistance is appreciated
 
 # QuestDB, Grafana, Slack alerts tutorial
 
