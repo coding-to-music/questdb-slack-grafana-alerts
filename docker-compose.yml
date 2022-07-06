@@ -22,9 +22,45 @@ services:
     networks:
       - questdb
     volumes:
-      - ./data/grafana:/var/lib/grafana/
       - ./grafana/provisioning/:/etc/grafana/provisioning/
-    user: "104"
+      - ./data/grafana:/var/lib/grafana/
+    user: "472"
 
 networks:
   questdb:
+
+
+# https://community.grafana.com/t/gf-paths-data-var-lib-grafana-is-not-writable/31369
+
+# https://github.com/cfbarbero/tick-grafana-docker/issues/1
+
+# command: ['whoami']
+# user: "472"
+# user: "1000"
+
+# id -u
+# 1000
+
+    # securityContext:
+    #   runAsUser: 472
+    #   runAsGroup: 472
+    #   fsGroup: 472
+
+# sudo chown 472:472 /var/lib/grafana 
+# sudo chown 472:472 /var/lib/grafana/plugins 
+
+# sudo chown 1000:1000 /var/lib/grafana 
+# sudo chown 1000:1000 /var/lib/grafana/plugins 
+# /var/lib/grafana/plugins
+
+# volumes:
+#     - /data/grafana:/var/lib/grafana
+
+#    CMD [ "node", "server.js" ]
+# in the container you just started:
+# chown -R root:root /etc/grafana && \
+# chmod -R a+r /etc/grafana && \
+# chown -R grafana:grafana /var/lib/grafana && \
+# chown -R grafana:grafana /usr/share/grafana
+
+    # command: ['init.py', '--url', 'redis://redis:6379']

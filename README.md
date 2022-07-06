@@ -24,6 +24,12 @@ git remote add origin git@github.com:coding-to-music/questdb-slack-grafana-alert
 git push -u origin main
 ```
 
+I am attempting this tutorial: https://github.com/questdb/questdb-slack-grafana-alerts 
+
+My repo is here: https://github.com/coding-to-music/questdb-slack-grafana-alerts
+
+When I run `docker-compose up` I get these messages:
+
 # Errors and Messages
 
 ```
@@ -32,6 +38,46 @@ grafana_alerts | mkdir: can't create directory '/var/lib/grafana/plugins': Permi
 grafana_alerts | GF_PATHS_DATA='/var/lib/grafana' is not writable.
 grafana_alerts | You may have issues with file permissions, more information here: http://docs.grafana.org/installation/docker/#migrate-to-v51-or-later
 ```
+
+# Steps attempted to fix
+
+When I run this
+
+```
+id -u
+1000
+```
+
+I see that I am user 1000, so I tried that in addition to user 472
+
+Per the recommendation of this page: http://docs.grafana.org/installation/docker/#migrate-to-v51-or-later
+
+I have added this line to the docker-compose.yml 
+
+```
+user: "472"
+```
+
+I have attempted to remove the directory /var/lib/grafana and also change it's ownership
+
+I have tried changing the target directory ownership
+
+and run `docker-compose up` as that user specified in the grafana-->user string 
+
+```
+sudo chown 472:472 /var/lib/grafana 
+sudo chown 472:472 /var/lib/grafana/plugins 
+
+sudo chown 1000:1000 /var/lib/grafana 
+sudo chown 1000:1000 /var/lib/grafana/plugins 
+```
+
+# Similar problem reports:
+
+https://community.grafana.com/t/gf-paths-data-var-lib-grafana-is-not-writable/31369
+
+https://github.com/cfbarbero/tick-grafana-docker/issues/1
+
 
 # QuestDB, Grafana, Slack alerts tutorial
 
